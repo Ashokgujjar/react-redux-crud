@@ -36,6 +36,15 @@ class EmployeesList extends Component {
     const { _id, name, address, position, salary } = employee;
     if (eet) {
       let employee = { _id, name, address, position, salary };
+      this.setState({
+        employee: {
+          name: "",
+          address: "",
+          position: "",
+          salary: ""
+        },
+        eet: false
+      });
       return this.props.updateEmployeeData(employee);
     }
     return this.props.addEmployeeData(employee);
